@@ -1,0 +1,235 @@
+header{
+  background-color: rgb(255, 255, 255);
+position: fixed;
+/* left0right0入れないとPOSSE~インスタアイコンまでの最低限の幅しか確保できなくなるからつける */
+left: 0;
+right: 0;
+z-index: 1000;
+
+}
+.headerInner {
+  height: 70px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.globalnav{
+  display: flex;
+}
+
+.globalnav a{
+  text-decoration: none;
+  color: #666666;
+  height: 20px;
+  margin: auto 0;
+  margin-right: 30px;
+  /* このしたのdisplayflexいらない説 */
+  display: flex;
+  font-weight: bold;
+
+}
+
+.icon a {
+  width: 50px;
+  height: 50px;
+  display:inline-flex;
+  border: solid 1px #eee;
+  border-radius: 50%;
+  
+}
+.icon img{
+  display:inline-flex;
+  margin: auto;
+  width: 24px;
+  height: 24px;
+}
+#headerLogo{
+min-width: auto;
+}
+
+
+
+main {
+  padding-top: 100px;
+  position: relative;
+  
+}
+
+.senpaiphoto{
+width: 976px;
+height: 680px;
+right: 0px;
+top: 0px; 
+margin-left: auto;
+
+}
+.senpaiphoto img {
+  border-radius: 80px 0 0 80px;
+}
+
+.box{
+  position: absolute;
+  height: 198px;
+  width: 378px;
+  left: 80px;
+  top: 198px;
+  border-radius: 24px;
+  background: #EFF2F5;
+  border-radius: 24px;
+  padding: 50px 62px;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.explanation {
+  padding-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0071BC;
+
+}
+.box h2{
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 80px;
+}
+.officialLine, .officialLine_layer {
+  margin: auto;
+  width: 1000px;
+  height: 350px;
+  border-radius: 50px;
+}
+
+.officialLine{
+  margin: auto;
+  background-image:url(./assets-ph1-website-main/img/bg-line.jpg);
+  background-size: cover;
+  color: #fff;
+
+}
+.officialLine_layer {
+
+  background-color: rgba(0, 113, 188, 0.9) ;
+}
+.officialLine h2{
+  font-size: 36px;
+  font-weight: bold;
+  
+}
+
+/* ここからfooter */
+.p_fixedLine {
+  width: 288px;
+  height: 80px;
+  background-color: #5fdb5f;
+  margin-left: auto;
+  border-radius: 15px;
+  box-shadow: 4px 4px 20px rgb(0 0 0 / 15%);
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
+.p_fixedLine a {
+  display: flex;
+  text-decoration: none;
+  justify-content: space-evenly;
+  padding-top: 7%;
+  
+}
+.line_icon {
+  background-color: #ffffff;
+  width: 29px;
+  height: 26px;
+  position: relative;
+  top: 5px;
+  left: 1px;
+}
+.line_icon::before {
+  content: "";
+  background-image: url(./assets-ph1-website-main/img/icon/icon-line.svg);
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -5px;
+  left: -1px;
+  border-radius: 10%;
+}
+.p_fixedLine a img{
+width: 36px;
+height: 36px;
+z-index: 1000;
+}
+.p_fixedLine a p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ffffff;
+  font-weight: bold;
+}
+#link_light {
+  width: 20px;
+}
+.ifooter_cfooter {
+  /* このwidthもいらない説 */
+  /* width: 50%; */
+  margin: 0 auto;
+  border-top: solid 1px #eee
+
+}
+.ifooter {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+padding-top: 50px;
+
+}
+
+.ifooter img {
+  width: 150px;
+  margin: 0 auto;
+}
+.ifooter p{
+  font-size: 14px;
+  text-align: center;
+  font-weight: normal;
+  color: #666666;
+}
+
+.cfooter {
+  border-top: solid 1px #eee;
+  margin-top: 50px;
+}
+.cfooter p {
+  font-size: 10px;
+  text-align: center;
+}
+
+.ifootersns {
+  text-align: center;
+}
+
+.ifootersns a {
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border : solid 1px #eee;
+  border-radius: 50%;
+}
+.ifootersns a img{
+  width: 20px;
+  height: 20px;
+}
+.cfooter {
+  padding-top: 50px;
+
+}
