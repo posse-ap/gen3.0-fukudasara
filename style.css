@@ -1,3 +1,4 @@
+
 header{
   background-color: rgb(255, 255, 255);
 position: fixed;
@@ -12,6 +13,9 @@ z-index: 1000;
 display: flex;
 justify-content: space-between;
 align-items: center;
+}
+.POSSE {
+  padding-left: 30px;
 }
 .globalnav{
   display: flex;
@@ -72,7 +76,7 @@ margin-left: auto;
   height: 198px;
   width: 378px;
   left: 80px;
-  top: 198px;
+  top: 298px;
   border-radius: 24px;
   background: #EFF2F5;
   border-radius: 24px;
@@ -98,6 +102,36 @@ margin-left: auto;
   font-size: 60px;
   line-height: 80px;
 }
+.Whatisposse h2{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 30px;
+  margin-top: 100px;
+}
+.Whatisposse h3 {
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: #0071BC;
+  margin-top: 20px;
+}
+.explanationOfPosse {
+  padding-top: 50px;
+  width: 984px;
+  margin: 0 auto;
+  display: flex;
+  gap: 48px;
+}
+.explanationOfPosse img {
+  width: 472px;
+  border-radius: 20px;
+}
+.explanationOfPosse p {
+  font-size: 14px;
+ margin: auto;
+ line-height: 25px;
+}
 .officialLine, .officialLine_layer {
   margin: auto;
   width: 1000px;
@@ -110,18 +144,78 @@ margin-left: auto;
   background-image:url(./assets-ph1-website-main/img/bg-line.jpg);
   background-size: cover;
   color: #fff;
-
+  position: relative;
+  width: 984px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 .officialLine_layer {
-
-  background-color: rgba(0, 113, 188, 0.9) ;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+.officialLine, .officialLine::before {
+  border-radius: 60px;
+}
+.officialLine::before {
+  background-color: rgba(0, 113, 188, 0.9) ;
+  content: "";
+position: absolute;
+top: 0;
+left: 0;
+
+width: 100%;
+height: 100%;
+}
+
 .officialLine h2{
   font-size: 36px;
   font-weight: bold;
+  display: flex;
+  z-index: 9999999;
+  padding-bottom: 25px;
+
+}
+.officialLine p {
+  z-index: 1000;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+}
+.line_logo {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  display: flex;
+  z-index: 1000;
+}
+.line_logo img {
+  width: 38px;
+  height: 38px;
   
 }
-
+.lineButton {
+  width: 350px;
+  height: 50px;
+  z-index: 1000;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  margin-top: 20px;
+  background-color: #fff;
+}
+.lineButton p {
+  padding-left: 100px;
+  font-weight: bold;
+}
+.lineButton img {
+  padding-left: 100px;
+}
 /* ここからfooter */
 .p_fixedLine {
   width: 288px;
@@ -201,6 +295,7 @@ padding-top: 50px;
   text-align: center;
   font-weight: normal;
   color: #666666;
+  padding-top: 20px;
 }
 
 .cfooter {
@@ -214,6 +309,8 @@ padding-top: 50px;
 
 .ifootersns {
   text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 .ifootersns a {
@@ -231,5 +328,5 @@ padding-top: 50px;
 }
 .cfooter {
   padding-top: 50px;
-
+padding-bottom: 50px;
 }
