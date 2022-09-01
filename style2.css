@@ -4,7 +4,7 @@ position: fixed;
 /* left0right0入れないとPOSSE~インスタアイコンまでの最低限の幅しか確保できなくなるからつける */
 left: 0;
 right: 0;
-z-index: 1000;
+z-index: 9999999;
 
 }
 .headerInner {
@@ -106,7 +106,7 @@ position: relative;
   font-weight: bold;
 }
 
-.quiz_container img {
+.quiz_question img {
   width:680px;
   height: 320px;
   margin-left: 160px;
@@ -143,6 +143,40 @@ position: relative;
   background-image: url(./assets-ph1-website-main/img/icon/icon-arrow.svg);
   background-position: right 32px center;
   background-repeat: no-repeat;
+}
+
+.quiz_container .buttonBorder {
+
+  border: solid 4px #0071bc;
+}
+
+.quiz_container ul .buttonLock {
+  /* pointer-events: none; */
+  border: solid 4px #bc006e;
+  
+}
+.sourceOfTheAnswer {
+  margin-top: 30px;
+  width: 984px;
+  height: 80px;
+  background-color: #eee;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  
+}
+
+.sourceOfTheAnswer img {
+  width:30px;
+  height:30px;
+  padding-top:25px;
+  padding-left: 20px;
+}
+
+.sourceOfTheAnswer p {
+  padding-left: 10px;
+  padding-top: 5px;
+  font-size: 20px;
 }
 
 .officialLine, .officialLine_layer {
@@ -188,7 +222,7 @@ height: 100%;
   font-size: 36px;
   font-weight: bold;
   display: flex;
-  z-index: 9999999;
+  z-index: 9999;
   padding-bottom: 25px;
 
 }
