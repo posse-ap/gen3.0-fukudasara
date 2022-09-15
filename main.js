@@ -67,8 +67,20 @@ for (let i = 0; i < 6; i++) {
   </li>
   </ul>
   
-  <div>
-  <h5>正解！</h5>
+  <div class="showCorrect"  id="displayCorrectOfQ${i+ 1}">
+    <h5>正解！</h5>
+    <div class = "showCorrectSecondLine" >
+      <h6> A </h6>
+      <p class ="showCorrectF"> ${answer} </p>
+    </div>
+  </div>
+
+  <div class="showWrong" id = "displayWrongOfQ${i+ 1}">
+    <h5>不正解...</h5>
+    <div class = "showWrongSecondLine" >
+      <h6> A </h6>
+      <p class ="showWrongF"> ${answer} </p>
+    </div>
   </div>
 
 
@@ -96,18 +108,26 @@ for (let i = 0; i < 6; i++) {
       console.log(clickedText);
       console.log(answer);
       // ↓クリックした選択肢に青い枠線を付与
-      element.classList.add('buttonBorder');
-
+      element.classList.add('buttonBorder') ;
+      
       // document.getElementsByClassName(`option_${i + 1}`)
 
-      optionList.classList.add('buttonLock');
+      optionList.classList.add('buttonLock') ;
       // document.querySelectorAll(`.option_${i + 1}`).classList.add('buttonLock');
       
+      const displayCorrectAnswer = document.getElementById(`displayCorrectOfQ${i+ 1}`)
+
+      const displayWrongAnswer = document.getElementById(`displayWrongOfQ${i+ 1}`)
 
       console.log(element);
       if (clickedText === answer){
-        console.log('正解！')
-      }else{console.log('不正解！')}
+        // console.log('正解！')
+        displayCorrectAnswer.classList.add('displayResult');
+        // console.log(displayCorrectAnswer);
+      }else{
+        // console.log('不正解！')
+        displayWrongAnswer.classList.add('displayResult');
+      }
     });
   })
 
