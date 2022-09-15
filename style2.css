@@ -148,12 +148,102 @@ position: relative;
 .quiz_container .buttonBorder {
 
   border: solid 4px #0071bc;
+  background-color: #eff2f5;
 }
 
 .buttonLock {
   pointer-events: none;
   
 }
+
+
+/* 以下正解表示 */
+.showCorrect {
+  width: 100%;
+  height: 150px;
+  background-color: #fff2f5;
+  border-radius: 20px;
+  margin-top: 30px;
+  display: none;
+}
+
+.showCorrect h5 {
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  color: #e34e70;
+}
+
+.showCorrectSecondLine {
+  margin: 20px;
+  display: flex;
+  
+}
+.showCorrect h6 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 0;
+  padding-left: 30px;
+}
+
+
+.showCorrect .showCorrectF {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 0;
+}
+/* ここまで正解表示 */
+
+/* 以下不正解表示 */
+.showWrong {
+  width: 100%;
+  height: 150px;
+  background-color:#eff2f5;
+  border-radius: 20px;
+  margin-top: 30px;
+  display: none;
+  
+}
+
+.showWrong h5 {
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 24px;
+  color: #0071bc;
+}
+
+.showWrongSecondLine {
+  margin: 20px;
+  display: flex;
+  
+}
+.showWrong h6 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 0;
+  padding-left: 30px;
+}
+
+
+.showWrong .showWrongF {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+/* ここまで不正解表示 */
+
+/* 以下正誤の非表示解除 */
+.displayResult {
+  display: block;
+}
+
 .sourceOfTheAnswer {
   margin-top: 30px;
   width: 984px;
