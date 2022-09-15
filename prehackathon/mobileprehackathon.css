@@ -1,0 +1,77 @@
+nav {
+  background-color: lightblue;
+  position : relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+label {
+  width: 30px;
+  height: 30px;
+  border: 1px solid  black;
+  position: absolute;
+  right:9px;
+  top: 11px;
+  z-index: 1000;
+}
+
+span {
+  width: 20px;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  right: 15px;
+  transition: .3s;
+  z-index: 100;
+}
+
+.hum1 {
+  top: 20px;
+}
+.hum2 { 
+  top: 27px;
+}
+
+.hum3 {
+  top: 34px;
+}
+
+/* クリックしたらばつ印になるようにする */
+#confirm:checked ~ .hum1 {
+  width: 27px;
+  transform: rotate(45deg);
+  top :27px;
+  right: 12px;
+}
+#confirm:checked ~ .hum2 {
+  display: none;
+}
+#confirm:checked ~ .hum3 {
+  width: 27px;
+  transform: rotate(-45deg);
+  top :27px;
+  right: 12px;
+}
+
+#confirm {
+  display: none;
+}
+ul {
+  position: absolute;
+  width: 30%;
+  height: 100vh;
+  right: -100%;
+  text-align: center;
+  background-color:lightcoral;
+  transition: 2s;
+
+}
+
+li {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#confirm:checked ~ ul {
+  right:0 ;
+}

@@ -37,7 +37,12 @@ const quizArray = [
     correctAnswer: 1,
   },
 ];
+
+
 for (let i = 0; i < 6; i++) {
+  const answerNum = quizArray[i].correctAnswer;
+  const answer = quizArray[i].option[answerNum];
+
   const container = document.getElementById("quiz_text_container");
   const quizText = `  <div class="quiz_container">
 <div class="quiz_question">
@@ -51,7 +56,7 @@ for (let i = 0; i < 6; i++) {
 </div>
 <h4>A</h4>
 <ul id="Question_${i + 1}">
- <li  class="option_${i + 1}" id="option_${i + 1}_1">
+  <li  class="option_${i + 1}" id="option_${i + 1}_1">
   ${quizArray[i].option[0]}
   </li>
   <li class="option_${i + 1}" id="option_${i + 1}_2">
@@ -60,8 +65,11 @@ for (let i = 0; i < 6; i++) {
   <li class="option_${i + 1}" id="option_${i + 1}_3">
   ${quizArray[i].option[2]}
   </li>
-</ul>
-
+  </ul>
+  
+  <div>
+  <h5>正解！</h5>
+  </div>
 
 
 <div class="sourceOfTheAnswer">
@@ -76,21 +84,23 @@ for (let i = 0; i < 6; i++) {
 
   const options = document.querySelectorAll(`.option_${i + 1}`);
   
-
+  
   options.forEach(function (element) {
-
+    
     element.addEventListener("click", function () {
-
+      
       console.log(options);
-      const answerNum = quizArray[i].correctAnswer;
-      const answer = quizArray[i].option[answerNum];
+      const optionList = document.getElementById(`Question_${i + 1}`);
+
       const clickedText = element.innerText;
       console.log(clickedText);
       console.log(answer);
       // ↓クリックした選択肢に青い枠線を付与
       element.classList.add('buttonBorder');
 
-      document.getElementsByClassName(`option_${i + 1}`).classList.add('buttonLock');
+      // document.getElementsByClassName(`option_${i + 1}`)
+
+      optionList.classList.add('buttonLock');
       // document.querySelectorAll(`.option_${i + 1}`).classList.add('buttonLock');
       
 

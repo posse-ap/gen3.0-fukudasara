@@ -150,9 +150,8 @@ position: relative;
   border: solid 4px #0071bc;
 }
 
-.quiz_container ul .buttonLock {
-  /* pointer-events: none; */
-  border: solid 4px #bc006e;
+.buttonLock {
+  pointer-events: none;
   
 }
 .sourceOfTheAnswer {
