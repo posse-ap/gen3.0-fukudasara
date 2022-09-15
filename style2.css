@@ -1,11 +1,10 @@
-
 header{
   background-color: rgb(255, 255, 255);
 position: fixed;
 /* left0right0入れないとPOSSE~インスタアイコンまでの最低限の幅しか確保できなくなるからつける */
 left: 0;
 right: 0;
-z-index: 1000;
+z-index: 9999999;
 
 }
 .headerInner {
@@ -59,79 +58,126 @@ main {
   
 }
 
-.senpaiphoto{
-width: 976px;
-height: 680px;
-right: 0px;
-top: 0px; 
-margin-left: auto;
-
+.topPhoto {
+position: relative;
 }
-.senpaiphoto img {
-  border-radius: 80px 0 0 80px;
+.topText {
+  
+  color: #ffffff;
+  
 }
-
-.box{
+.topText h2 {
   position: absolute;
-  height: 198px;
-  width: 378px;
-  left: 80px;
-  top: 298px;
-  border-radius: 24px;
-  background: #EFF2F5;
-  border-radius: 24px;
-  padding: 50px 62px;
-  display: flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
+  top:110px;
+  left:204px;
 }
-
-
-.explanation {
-  padding-bottom: 20px;
-  font-size: 16px;
+.topText h1 {
+  position: absolute;
+  top:160px;
+  left:204px;
+  font-size: 50px;
   font-weight: bold;
-  color: #0071BC;
+}
 
+/* こっからクイズ */
+
+.quiz_container {
+  width:984px;
+  padding-top:120px ;
+  margin: 0 auto;
 }
-.box h2{
-  font-family: 'Noto Sans JP';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 80px;
-}
-.Whatisposse h2{
+
+.quiz_container h3{
+  width: 80px;
+  height: 70px;
+  background-color: #0071bc;
+  border-radius: 8px;
   text-align: center;
+  line-height: 70px;
+  color: #fff;
   font-size: 30px;
   font-weight: bold;
-  line-height: 30px;
-  margin-top: 100px;
 }
-.Whatisposse h3 {
-  text-align: center;
-  font-size: 13px;
-  font-weight: bold;
-  color: #0071BC;
+
+.quiz_container p {
   margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 36px;
+  font-weight: bold;
 }
-.explanationOfPosse {
-  padding-top: 50px;
-  width: 984px;
-  margin: 0 auto;
+
+.quiz_question img {
+  width:680px;
+  height: 320px;
+  margin-left: 160px;
+  margin-bottom: 50px;
+}
+
+.quiz_container h4 {
+  width:50px;
+  height:70px;
+  background-color: #e34e70;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 70px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+.quiz_container ul{
+  padding-top: 20px;
   display: flex;
-  gap: 48px;
+  justify-content: space-between;
 }
-.explanationOfPosse img {
-  width: 472px;
-  border-radius: 20px;
+.quiz_container li {
+  
+  font-weight: 700;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  width: 280px;
+  height:60px;
+  border: solid 4px #eee;
+  border-radius: 8px;
+  background-image: url(./assets-ph1-website-main/img/icon/icon-arrow.svg);
+  background-position: right 32px center;
+  background-repeat: no-repeat;
 }
-.explanationOfPosse p {
-  font-size: 14px;
- margin: auto;
- line-height: 25px;
+
+.quiz_container .buttonBorder {
+
+  border: solid 4px #0071bc;
 }
+
+.buttonLock {
+  pointer-events: none;
+  
+}
+.sourceOfTheAnswer {
+  margin-top: 30px;
+  width: 984px;
+  height: 80px;
+  background-color: #eee;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  
+}
+
+.sourceOfTheAnswer img {
+  width:30px;
+  height:30px;
+  padding-top:25px;
+  padding-left: 20px;
+}
+
+.sourceOfTheAnswer p {
+  padding-left: 10px;
+  padding-top: 5px;
+  font-size: 20px;
+}
+
 .officialLine, .officialLine_layer {
   margin: auto;
   width: 1000px;
@@ -175,7 +221,7 @@ height: 100%;
   font-size: 36px;
   font-weight: bold;
   display: flex;
-  z-index: 999;
+  z-index: 9999;
   padding-bottom: 25px;
 
 }

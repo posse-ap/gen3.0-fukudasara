@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>POSSE 初めてのweb制作</title>
   <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style2.css">
+  <script src="main.js" defer></script>
 </head>
 
 
@@ -32,77 +32,121 @@
 
   </header>
   <main>
-    <div class="senpaiphoto">
-      <img src="./assets-ph1-website-main/img/img-hero.jpg" alt="先輩の写真">
-    </div>
-  
-    <div class="box">
-      <p class="explanation">
-        学生プログラミングコミュニティPOSSE(ポッセ)
-      </p>
-      <h2>自分史上最高<br>を仲間と。</h2>
-    </div>
-    <div class="Whatisposse">
-      <h2>
-        POSSEとは
-      </h2>
-      <h3>
-      About POSSE
-      </h3>
-      <div class="explanationOfPosse">
-      <img src="./assets-ph1-website-main/img/img-about.jpg" alt="みんなの写真">
+<div class="topPhoto">
+  <img src="./assets-ph1-website-main/img/quiz/bg-hero.jpg" alt="クイズページトップの教室の写真">
+  <div class="topText">
+  <h2>
+    POSSE課題
+  </h2>
+  <h1>
+    ITクイズ
+  </h1>
+</div>
+</div>
+
+<h1>烏龍茶</h1>
+<div id="container"></div>
+<section class="quiz" id="quiz_text_container">
+  <!-- <div class="quiz_container">
+    <div class="quiz_question">
+      <h3>Q1</h3>
       <p>
-        学生プログラミングコミュニティ「POSSE(ポッセ)」は、人格とプログラミング、二つの面での成長をスローガンに活動しており、大学生だけが集まって学びを深めるコミュニティです。<br>プログラミングだけではありません。オフラインでのイベントや、旅行など様々な企画を行っています！<br>それらを通じて、夏休みの大半をPOSSEで出来た仲間と過ごす人もたくさんいるほどメンバーとの仲が深まります。
+        日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？
+      </p>
+      <img src="./assets-ph1-website-main/img/quiz/img-quiz01.png" alt="1問目の画像">
+    </div>
+    <h4>A</h4>
+    <ul id="firstQuestion">
+      <li id="idForTest">約28万人</li>
+      <li>約79万人</li>
+      <li>約183万人</li>
+    </ul>
+
+
+    /*↓正解不正解を一応作っとく*/
+
+<div class="correct">
+<p>正解！</p>
+<h4>A ${answer}</h4>
+</div>
+<div class="wrong">
+<p>不正解...</p>
+</div>
+    <div class="sourceOfTheAnswer">
+      <img src="./assets-ph1-website-main/img/icon/icon-note.svg" alt="帽子マーク">
+      <p>
+        経済産業省 2019年3月 － IT 人材需給に関する調査
       </p>
     </div>
+  </div> -->
+
+  <!-- <div class="quiz_container">
+    <div class="quiz_question">
+      <h3>Q2</h3>
+      <p>
+        既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？
+      </p>
+      <img src="./assets-ph1-website-main/img/quiz/img-quiz02.png" alt="2問目の画像">
     </div>
-    <div class="officialLine">
-      <div class="officialLine_layer">
-        <h2>
-          <div class="line_logo">
-            <img src="./assets-ph1-website-main/img/icon/icon-line.svg" alt="lineのアイコン">
-          </div>
-          POSSE 公式LINE
-        </h2>
-        <p>
-          公式LINEにてご質問を随時受け付けております。<br>詳細やPOSSE最新情報につきましては、公式LINEにてお知らせ致しますので<br>
-          下記ボタンより友達追加をお願いします！
-        </p>
-  <button class="lineButton">
+    <h4>A</h4>
+    <ul>
+      <li>INTECH</li>
+      <li>BIZZTECH</li>
+      <li>X-TECH</li>
+    </ul>
+     <div class="sourceOfTheAnswer">
+      <img src="./assets-ph1-website-main/img/icon/icon-note.svg" alt="帽子マーク">
+      <p>
+        経済産業省 2019年3月 － IT 人材需給に関する調査
+      </p>
+    </div> -->
+  <!-- </div> --> 
+
+
+
+</section>
+
+<div class="officialLine">
+  <div class="officialLine_layer">
+    <h2>
+      <div class="line_logo">
+        <img src="./assets-ph1-website-main/img/icon/icon-line.svg" alt="lineのアイコン">
+      </div>
+      POSSE 公式LINE
+    </h2>
     <p>
-      LINE追加
+      公式LINEにてご質問を随時受け付けております。<br>詳細やPOSSE最新情報につきましては、公式LINEにてお知らせ致しますので<br>
+      下記ボタンより友達追加をお願いします！
     </p>
-    <img src="./assets-ph1-website-main/img/icon/icon-link-gray-dark.svg" alt="">
-  </button>
-      </div>
-    </div>
-  </main>
-  <footer class="ifooter_cfooter">
-    <div class="p_fixedLine">
-      <a href="https://line.me/R/ti/p/@651htnqp?from=page">
-        <i class="line_icon"></i>
-        <p>POSSE公式LINEで<br>最新情報をGET!</p>
-        <img id="link_light" src="./assets-ph1-website-main/img/icon/icon-link-light.svg" alt="">
-      </a>
-  
-    </div>
-    <div class="ifooter">
-      <img src="./assets-ph1-website-main/img/icon/posseLogo.svg" alt="POSSEのヘッダー">
-      <p>POSSE公式サイト</p>
-      <div class="ifootersns">
-        <a href="https://twitter.com/posse_program" class="twitter">
-          <img src="./assets-ph1-website-main/img/icon/icon-twitter.svg" alt="twitterのロゴ">
-        </a>
-        <a href="https://www.instagram.com/posse_programming/" class>
-          <img src="./assets-ph1-website-main/img/icon/icon-instagram.svg" alt="instagramのロゴ">
-        </a>
-      </div>
+    <button class="lineButton">
+      <p>
+        LINE追加
+      </p>
+      <img src="./assets-ph1-website-main/img/icon/icon-link-gray-dark.svg" alt="">
+    </button>
+  </div>
+</div>
+
+</main>
+
+<div class="ifooter">
+  <img src="./assets-ph1-website-main/img/icon/posseLogo.svg" alt="POSSEのヘッダー">
+  <p>POSSE公式サイト</p>
+  <div class="ifootersns">
+    <a href="https://twitter.com/posse_program" class="twitter">
+      <img src="./assets-ph1-website-main/img/icon/icon-twitter.svg" alt="twitterのロゴ">
+    </a>
+    <a href="https://www.instagram.com/posse_programming/" class>
+      <img src="./assets-ph1-website-main/img/icon/icon-instagram.svg" alt="instagramのロゴ">
+    </a>
+  </div>
     </div>
     <div class="cfooter">
       <p>&copy;2022 POSSE</p>
     </div>
   
   </footer>
+
   </body>
   
   </html>
