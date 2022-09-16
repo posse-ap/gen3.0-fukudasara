@@ -2,6 +2,7 @@ header{
   background-color: rgb(255, 255, 255);
 position: fixed;
 /* left0right0入れないとPOSSE~インスタアイコンまでの最低限の幅しか確保できなくなるからつける */
+top: 0;
 left: 0;
 right: 0;
 z-index: 9999999;
@@ -53,7 +54,7 @@ min-width: auto;
 
 
 main {
-  padding-top: 100px;
+  margin-top: 70px;
   position: relative;
   
 }
@@ -140,10 +141,13 @@ position: relative;
   height:60px;
   border: solid 4px #eee;
   border-radius: 8px;
-  background-image: url(./assets-ph1-website-main/img/icon/icon-arrow.svg);
-  background-position: right 32px center;
-  background-repeat: no-repeat;
+
 }
+  .arrow {
+    background-image: url(./assets-ph1-website-main/img/icon/icon-arrow.svg);
+    background-position: right 32px center;
+    background-repeat: no-repeat;
+  }
 
 .quiz_container .buttonBorder {
 
