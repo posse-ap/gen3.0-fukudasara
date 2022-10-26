@@ -51,7 +51,126 @@ align-items: center;
 min-width: auto;
 }
 
+/* 以下ハンバーガーメニュー */
+/* .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background: #fff;
+} */
 
+/* .logo {
+  font-size: 24px;
+} */
+
+/* ここから下がハンバーガーメニューに関するCSS */
+  
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+  display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+@media screen and (max-width: 480px) {
+.drawer_open {
+  margin-left: auto;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;/* 重なり順を一番上にする */
+  cursor: pointer;
+}
+
+
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #333;
+  transition: 0.5s;
+  position: absolute;
+}
+
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+  bottom: 8px;
+
+}
+
+
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+  top: 8px;
+}
+
+
+/* アイコンがクリックされたら真ん中の線を透明にする  */
+#drawer_input:checked ~ .drawer_open span {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer_input:checked ~ .drawer_open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#drawer_input:checked ~ .drawer_open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+/* #drawer_input:checked ~ .humTop {
+  bottom: 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+#drawer_input:checked ~ #humBottom {
+  top: 0;
+  transform: rotate(-45deg);
+} */
+  
+/* メニューのデザイン*/
+.nav_content {
+
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%; /* メニューを画面の外に飛ばす */
+  z-index: 99;
+  /* background: #fff; */
+  background-color: #0071bc;
+  transition: .5s;
+}
+
+/* メニュー黒ポチを消す */
+.nav_list {
+  list-style: none;
+  padding-left: 20%;
+  padding-top: 10%;
+}
+.nav_list .nav_item {
+  font-size: 30px;
+  padding-bottom: 100px;
+}
+.nav_list .nav_item a {
+  text-decoration: none;
+}
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked ~ .nav_content {
+  left: 0;/* メニューを画面に入れる */
+}
+}
+/* ここまでハンバーガーめにゅー */
 
 main {
   margin-top: 70px;
@@ -141,7 +260,7 @@ position: relative;
   height:60px;
   border: solid 4px #eee;
   border-radius: 8px;
-
+  cursor: pointer;
 }
   .arrow {
     background-image: url(./assets-ph1-website-main/img/icon/icon-arrow.svg);
