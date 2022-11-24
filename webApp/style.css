@@ -2,17 +2,26 @@ html {
   
 }
 
+header {
+  padding: 10px;
+}
 .headerInner {
-  margin : 10px;
   display: flex;
-  
+  justify-content: space-between;
+  padding: 0 5%;
+}
+.headerInnerLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.headerInnerLeft img {
+  width: 50%;
 }
 .forthWeek {
   width: 150px;
   color: darkgray;
-  margin-top: 12px;
-  margin-left: 50px;
-  margin-right: 60vw;
+
   white-space: nowrap;
 
 }
@@ -80,12 +89,17 @@ html {
 
 .modal-header {
 /* background-color: chartreuse; */
-padding-left: 95%;
+/* padding-left: 95%; */
+left: 100%;
 }
 
 .modalClose {
+  display: block;
+  left: 100%;
+  transform: translate(-50%);
   font-size: 2rem;
-  width: 100px;
+  width: 20px;
+  top: 20%;
   background-color: #046bba;
   border-radius: 50%;
   padding: 0 5px;
@@ -93,6 +107,7 @@ padding-left: 95%;
 }
 .modalClose span {
   display: block;
+  
   /* left: 30px; */
 }
 .modalClose:hover {
@@ -194,6 +209,68 @@ background-color: cadetblue;
 
 /* ここまでチェックボックス */
 
+/* 以下Twitterチェックボックス */
+.my-checkboxT {
+  display: inline-block;
+  font-size: 12px;
+  width: fit-content;
+  border-radius: 30px;
+  padding: 4px;
+  
+  /* display: block; */
+  position: relative;
+  margin: 2px 0;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none; /* テキストの選択を防ぐ */
+  /* background-color:#f5f5f8 ; */
+}
+
+/* inputは非表示にする */
+.my-checkboxT input {
+  display: none;
+}
+
+/* □ */
+.checkmark {
+  position: absolute;
+  top: 4px; /* 上からの位置 */
+  left: 5px;
+  height: 18px; /* 大きさ */
+  width: 18px; /* 大きさ */
+  /* border: solid 2px #d4dae2; 線 */
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #cccccc;
+
+}
+/* ✓ */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  left: 6px; /* チェックの位置 */
+  top: 3px; /* チェックの位置 */
+  width: 6px; /* チェックの大きさ */
+  height: 10px; /* チェックの大きさ */
+  border: solid #FFF;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  /* opacity: 0; 透明にしておく */
+}
+
+/* チェックが入ったときの□ */
+.my-checkboxT input:checked + .checkmark {
+  background: #2e80ff; /* チェック時の色 */
+  border-color: #2e80ff; /* チェック時の色 */
+}
+
+/* チェックが入ったときの✓ */
+.my-checkboxT input:checked + .checkmark:after {
+  opacity: 1; /* 透明を解除 */
+}
+
+/* ここまでTwitterチェックボックス */
+
 .modal-gakushuLang{
   width: 100%;
 background-color:crimson;
@@ -230,7 +307,7 @@ height: 150px;
 }
 
 .modal-twitterShare p {
-  padding-left: 25px;
+  /* padding-left: 25px; */
 }
 /* ここまでモーダル右 */
 
@@ -266,19 +343,19 @@ main {
 }
 
 .bigBox {
+  padding-top: 20px;
   width: calc(100% - 140px);
   margin: 0 auto;
   display: flex;
   gap: 20px;
 }
 .left {
-  width: 100%;
+  width: calc((100% - 20px) /2);
   /* background-color: lawngreen; */
   
 }
 .right {
-  width: 100%;
-  background-color:indianred;
+  width: calc((100% - 20px) /2);
   display: flex;
   gap: 20px;
 }
@@ -288,7 +365,7 @@ main {
   gap: 10px;
   /* background-color: chocolate; */
   width: 100%;
-  margin: 20px auto;
+  margin:  auto;
   
 }
 
@@ -314,30 +391,42 @@ main {
 }
 
 .myFirstChart {
-  /* position: relative; */
+
   width: 100%;
-  /* margin: 0 auto; */
-  /* background-color: blueviolet; */
+
+  margin-top: 50px;
+  background-color: #fff;
   border-radius: 20px;
-
-
-  height: 200px;
+  padding: 10px;
 
 }
 
+.mySecondChart {
+  width: 90%;
+  margin: 0 auto;
+}
 .language {
   width: 100%;
-  background-color: rgb(154, 139, 139);
+  background-color:#fff;
   border-radius: 20px;
+  padding: 20px;
+}
+.languageInner {
+  
 }
 .donutLegend {
+  padding-top: 20px;
+  font-size: 12px;
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
 }
 .donutLegendSample {
   display: flex;
   align-items: center;
   gap: 5px;
+  /* padding-right: 10px;
+  padding-bottom: 10px; */
 }
 .donutLegendIcon {
   display: block;
@@ -357,20 +446,23 @@ main {
   display: none;
   position: fixed;
   z-index: 1;
-  left: 0;
-  top: 20%;
+  /* left: 50%; */
+  top: 10%;
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgb(169, 2, 110);
+  background-color: #fff;
 }
-table {
+#calender {
   position: absolute;
-  left: 20%;
+  left: 50%;
+  transform: translate(-50%);
   top: 10%;
   width:500px;
   border-collapse: collapse;
   border: 2px solid #eee;
+}
+table {
 
 
 }
@@ -382,8 +474,9 @@ tfoot {
 
 .selectButton {
   position: absolute;
-  left: 39.5%;
-  top: 55%;
+  left: 50%;
+  transform: translate(-50%);
+  top: 65%;
   z-index: 10;
   color: #ffffff;
   width: 150px;
@@ -401,13 +494,10 @@ td {
 
 tbody td:first-child {
   color: red;
-  /* color: #9ebed4; */
 }
 
 tbody td:last-child {
   color: blue;
-  /* color: #9ebed4; */
-
 }
 
 tfoot {
@@ -432,3 +522,106 @@ td.today {
 /* .calenderBlock {
   display: block;
 } */
+
+footer {
+position: relative;
+}
+.footerDate {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+font-weight: 600;
+}
+.footerDateInner {
+  display: flex;
+  gap: 25px;
+}
+.footerDate span {
+  color: #046bba;
+}
+
+/* 以下ローディング画面 */
+/* ローディング画面背景 */
+.loader-bg {
+  width: 70vw;
+  height: 60vh;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 9999;
+  background-color: rgb(235, 7, 147);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+/* ローディングアニメーション */
+.loader {
+  display: none;
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: #ffffff;
+  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #ffffff 10%, rgba(220, 159, 159, 0) 42%);
+  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  /* background: #ffffff; */
+  background: #137bc3;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+  background: rgb(235, 7, 147);
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
+  0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  }
+  100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  }
+  100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  }
+}
+/* ここまでローディング画面 */

@@ -11,6 +11,8 @@ console.log(modal);
 // modal.style.display ='block';
 // })
 
+
+
 function modalOpen(){
   
   modal.classList.add('modalBlock');
@@ -32,6 +34,27 @@ function outsideClose(e) {
     modal.style.display = 'none';
   }
 }
+
+// 以下ローディングモーダル表示
+const loadingOpen = document.getElementById('modal-record');
+const loader = document.getElementById('loader');
+const loaderBg = document.getElementById('loader-bg');
+
+$(function(){
+  //読み込みが完了したら実行する
+  $(loadingOpen).on('click',function(){
+    console.log('りんご');
+    loader.style.display = 'block';
+    loaderBg.style.display = 'flex';
+    //ローディングアニメーションをフェードアウト
+    $('.loader').delay(3000).fadeOut(600);
+    //背景色をフェードアウト
+    $('.loader-bg').delay(3000).fadeOut(600);
+});
+
+});
+
+// ここまでローディング表示
 
 // カレンダー表示
 // $('#datepicker').datepicker();
@@ -188,5 +211,40 @@ function outsideClose(e) {
   
 }
 
-// 以下ドーナツチャート
+// 以下twitter投稿機能
+//openTwitter(投稿文、シェアするURL、ハッシュタグ、提供元アカウント)
+
+// postTwitter.addEventListener('click',openTwitter);
+
+// const submit = document.getElementById("submit");
+//   const spsubmit = document.getElementById("sp_submit");
+//   const studyTwitter = document.getElementById("js-studytwitter");
+//   studyTwitter.innerHTML = `<input type="checkbox" name="share" id="twitter_share"><label class="twitter_share_textbox" for="twitter_share" required>Twitterにシェアする</label>`;
+
+  const chk = document.getElementById("js-my-checkboxT");
+  
+  
+  chk.addEventListener("change", function(){
+    // 記録・投稿ボタンの取得
+    const postTwitter = document.getElementById('modal-record');
+    // twitter記入欄の取得
+    const twitterInput = document.getElementById('modal-twitterInput');
+    // if (this.checked) {
+      console.log("twitterにシェアします");
+
+    
+    function openTwitter(text) {
+      if(twitterInput.value.length < 141){
+        var turl = "https://twitter.com/intent/tweet?text="+text;
+        // window.open(turl,'_blank');
+        window.location.href = turl;
+      }else{
+        console.log('140文字以内で入力してください');
+      }
+    }
+    postTwitter.addEventListener('click',openTwitter);
+    
+  }
+  // }
+  );
 }

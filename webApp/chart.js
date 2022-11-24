@@ -23,13 +23,9 @@
     }; //データ
     let options = {
       plugins:{
-        title: {
-          display:true,
-          text:'学習言語',
-
-
+        legend : {
+            display: false,
         },
-
       },
       scales: {
         x: {
@@ -88,7 +84,7 @@
   }
 // ここまで棒グラフ
 
-// 以下ドーナツチャート
+// 以下学習言語ドーナツチャート
   {
     const labels = [
       'JavaScript',
@@ -123,17 +119,33 @@
       }]
     };
     const options = {
-      title:{
-        display: true,
-        text: '学習言語'
-      },
       plugins:{
         legend:{
           display: false,
-        }
-      }
-
+        },
+        tooltip: {
+          enabled: false
+        },
+        datalabels: {
+          font: {
+            size: 13,
+          },
+          color: 'white',
+          formatter: function( value, context ) {
+            if(context.dataIndex<3) {
+              return value.toString() + '%' ;
+            }else{
+              return '';
+            }
+          }
+        },
+      },    
     }
+
+    const plugins = [
+      ChartDataLabels,
+    ]
+
         //色々な設定
 
     const ctx = document.getElementById("myDonutLangChart").getContext("2d");//表示する場所取得
@@ -143,9 +155,10 @@
       type: 'doughnut',
       data: data,
       options: options,
+      plugins: plugins,
     });
 
-const getLegend = document.getElementById('js-donutLegend');
+const getLegend = document.getElementById('js-donutLangLegend');
 
 for ( let i = 0; i < labels.length; i++) {
 
@@ -161,7 +174,89 @@ for ( let i = 0; i < labels.length; i++) {
       //   <p>JavaScript</p>
       // </li>
   }
-  // ここまでドーナツチャート
+  // ここまで学習言語ドーナツチャート
 
+  // 以下学習コンテンツドーナツチャート
+  {
+    const labels = [
+      'ドットインストール',
+      'N予備校',
+      'POSSE課題',
+    ]
+
+    const backgroundColor = [
+      '#0645ec',
+      '#0f71bd',
+      '#21bdde',
+      '#3ccefe',
+      '#b29ef3',
+      '#6d46ec',
+      '#4a17ef',
+      '#3105c0',
+    ]
+
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'My First Dataset',
+        data: [42, 33, 25],
+        backgroundColor: backgroundColor,
+        hoverOffset: 4,
+        borderWidth: 0,
+      }]
+    };
+    const options = {
+      plugins:{
+        legend:{
+          display: false,
+        },
+        tooltip: {
+          enabled: false
+        },
+        datalabels: {
+          font: {
+            size: 13,
+          },
+          color: 'white',
+          formatter: function( value, context ) {
+            if(context.dataIndex<3) {
+              return value.toString() + '%' ;
+            }else{
+              return '';
+            }
+          }
+        },
+      },    
+    }
+
+    const plugins = [
+      ChartDataLabels,
+    ]
+
+        //色々な設定
+
+    const ctx = document.getElementById("myDonutContentChart").getContext("2d");//表示する場所取得
+
+    //ここで今までの設定した値を出力
+    const config = new Chart(ctx, {
+      type: 'doughnut',
+      data: data,
+      options: options,
+      plugins: plugins,
+    });
+
+const getLegend = document.getElementById('js-donutContentLegend');
+
+for ( let i = 0; i < labels.length; i++) {
+
+  const createLi = document.createElement('li');
+  createLi.classList.add('donutLegendSample');
+  createLi.innerHTML =` <span class="donutLegendIcon" style="background-color:${backgroundColor[i]} ;"></span> <p>${labels[i]}</p>`;
+  getLegend.appendChild(createLi);
+
+}
+
+  }
+  // ここまで学習コンテンツドーナツチャート
 
 }

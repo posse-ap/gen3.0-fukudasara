@@ -11,6 +11,8 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <!-- 以下％表示 -->
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
   <script src="common.js" defer></script>
   <!-- deferは他の全てを読み込んだ後に実行しますよってやつらしい -->
 
@@ -20,8 +22,10 @@
 <body>
   <header>
     <div class="headerInner">
-      <img src="./img/logo.svg" alt="POSSEのロゴ">
-      <p class="forthWeek">4th week</p>
+      <div class="headerInnerLeft">
+        <img src="./img/logo.svg" alt="POSSEのロゴ">
+        <p class="forthWeek">4th week</p>
+      </div>
       <button id="modalOpen" class="recordAndPost" onclick="modalOpen()">記録・投稿</button>
 
   </header>
@@ -125,18 +129,21 @@
             </div>
             <div class="modal-twitter">
               <label class="modal-headLine">Twitter用コメント</label>
-              <input type="text" id="modal-twitterInput" class="modal-input" minlength="0" maxlength="140">
+              <textarea maxlength="140"  id="modal-twitterInput" class="modal-input"></textarea>
             </div>
             <div class="modal-twitterShare">
+              <label class="my-checkboxT" id="js-my-checkboxT">
+                <input type="checkbox" >
               <span class="checkmark" id="twitterCheck"></span>
               <p>
                 Twitterにシェアする
               </p>
+            </label>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button id="modal-record" class="recordAndPost">記録・投稿</button>
+          <button id="modal-record" class="recordAndPost" >記録・投稿</button>
         </div>
       </div>
     </div>
@@ -165,11 +172,19 @@
         <tfoot>
           <tr>
             <td id="today" colspan="7">Today</td>
-            <button id ='selectButton' class="selectButton">決定</button>
+            <button id='selectButton' class="selectButton">決定</button>
           </tr>
         </tfoot>
       </table>
     </div>
+
+    <!-- ローディング画面 -->
+    <div class="loader-bg" id="loader-bg">
+      <div class="loader" id ="loader"></div>
+    </div>
+  
+
+
     <div class="bigBox">
       <section class="left">
         <div class="cards">
@@ -194,24 +209,49 @@
           <canvas id="myChart">
           </canvas>
         </div>
-        <!-- <div class="mySecondChart">
-          <canvas id="myDonutLangChart">
-          </canvas>
-        </div> -->
+
       </section>
 
       <section class="right">
         <div class="language">
-          <canvas id="myDonutLangChart">
-          </canvas>
-          <ul class="donutLegend" id="js-donutLegend">
-          </ul>
+          <div class="languageInner">
+            <p class="langTitle">
+              学習言語</p>
+            <div class="mySecondChart">
+              <canvas id="myDonutLangChart"></canvas>
+            </div>
+            <ul class="donutLegend" id="js-donutLangLegend">
+            </ul>
+          </div>
         </div>
-        <div class="content"></div>
+        <div class="language">
+          <div class="languageInner">
+            <p class="langTitle">
+            学習コンテンツ
+            </p>
+            <div class="mySecondChart">
+              <canvas id="myDonutContentChart"></canvas>
+            </div>
+            <ul class="donutLegend" id="js-donutContentLegend">
+            </ul>
+          </div>
+        </div>
       </section>
     </div>
-
+    <footer>
+      <div class="footerDate">
+        <div class="footerDateInner">
+          <span>＜</span>
+          <p>
+            2022年 10月
+          </p>
+          <span>＞</span>
+        </div>
+      </div>
+    </footer>
   </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
   <script src="chart.js"></script>
 </body>
 
