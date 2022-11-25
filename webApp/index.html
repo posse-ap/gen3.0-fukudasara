@@ -26,7 +26,7 @@
         <img src="./img/logo.svg" alt="POSSEのロゴ">
         <p class="forthWeek">4th week</p>
       </div>
-      <button id="modalOpen" class="recordAndPost" onclick="modalOpen()">記録・投稿</button>
+      <button id="modalOpen"  id ="pcButton" class="recordAndPost" onclick="modalOpen()">記録・投稿</button>
 
   </header>
   <main>
@@ -36,13 +36,23 @@
       <div class="modal-content">
         <div class="modal-header">
           <!-- <h1>Great job 🎉</h1> -->
-          <span class="modalClose">×</span>
+          <span class="modalClose"></span>
         </div>
-        <div class="modal-body">
+        <div class="postComplete">
+          <div class="postCompleteContent">
+            <p class="completeAwesome">AWESOME!</p>
+            <div class="completeCheck">
+              <span class="completeCheckS"></span>
+            </div>
+            <p class="postCompleteP">記録・投稿完了しました</p>
+          </div>
+        </div>
+        <div class="modal-body" id="modal-body">
           <div class="modal-left">
             <div class="modal-gakushuDate">
               <label for="modal-gakushuDateInput" class="modal-headLine">学習日</label>
-              <input type="text" class="modal-input" size="10" id="modal-gakushuDateInput" onclick="calenderOpen()">
+              <!-- <input type="text" class="modal-input" size="10" id="modal-gakushuDateInput" onclick="calenderOpen()"> -->
+              <input type="date" class="modal-input" size="10" id="modal-gakushuDateInput" >
               <!-- 以下カレンダー -->
               <!-- ここまでカレンダー -->
 
@@ -132,8 +142,8 @@
               <textarea maxlength="140"  id="modal-twitterInput" class="modal-input"></textarea>
             </div>
             <div class="modal-twitterShare">
-              <label class="my-checkboxT" id="js-my-checkboxT">
-                <input type="checkbox" >
+              <label class="my-checkboxT" >
+                <input type="checkbox" id="js-my-checkboxT">
               <span class="checkmark" id="twitterCheck"></span>
               <p>
                 Twitterにシェアする
@@ -142,7 +152,7 @@
             </div>
           </div>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" id="modal-footer">
           <button id="modal-record" class="recordAndPost" >記録・投稿</button>
         </div>
       </div>
@@ -248,6 +258,7 @@
           <span>＞</span>
         </div>
       </div>
+      <button id="modalOpen" id ="spButton" class="sp-recordAndPost" onclick="modalOpen()">記録・投稿</button>
     </footer>
   </main>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
