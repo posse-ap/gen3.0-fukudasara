@@ -27,6 +27,16 @@ header {
 }
 
 /* 以下追加 */
+.pc-recordAndPost {
+  color: #ffffff;
+  width: 150px;
+  height: 45px;
+  background: linear-gradient(to right, #1276bf, #39cafb);
+  border-radius: 50px;
+  box-shadow: 0px 5px 5px 5px #e0f7ff;
+  white-space: nowrap;
+  
+}
 .recordAndPost {
   color: #ffffff;
   width: 150px;
@@ -65,7 +75,7 @@ header {
   display: block;
 }
 .modal-content {
-  background-color: #f4f4f4;
+  background-color:#ffffff;
   border-radius: 30px;
   margin: 20% auto;
   width: 80%;
@@ -402,11 +412,11 @@ height: 150px;
   border-radius:30px ;
 }
 #modal-record {
+  display: block;
+  margin: 0 auto;
   font-size: 12px;
   width: 45%;
   height: 60%;
-  /* position: absolute; */
-  /* left: 27%; */
 }
 /* ここまでモーダル */
 
@@ -419,7 +429,7 @@ height: 150px;
 
 main {
   width: 100vw;
-  height: 500px;
+  height: 100vh;
   background-color:#f5f5f8;
   /* margin: 0 80px; */
 }
@@ -710,9 +720,10 @@ font-weight: 600;
 }
 /* ここまでローディング画面 */
 
-#spButton {
-
+.sp-recordAndPost {
+  display: none;
 }
+
 /* ここからレスポンシブ */
 @media(max-width:767px) {
   
