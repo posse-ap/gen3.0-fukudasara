@@ -1,3 +1,81 @@
+
+.hamNav {
+  position: fixed;
+  right: -100%;
+  opacity: 0;
+  width: 100vw;
+  height:100vh;
+  background-color: #fff;
+  z-index: 10;
+  transition: all 0.5s;
+}
+
+.hamNavToggle {
+  opacity: 1;
+  transform: translateX(-100%);
+
+}
+.hamNavContent {
+  width: 100%;
+  padding-top: 200px;
+  margin: 0 auto;
+
+}
+.hamNavContentList {
+  width: 100%;
+  font-size: 35px;
+
+}
+.hamNavContentList li {
+  width: fit-content;
+  margin: auto;
+  padding-bottom: 50px;
+
+}
+.hamLine {
+  width: 90%;
+  padding: 10px;
+  background-color: #5fdb5f;
+  position:relative ;
+  border-radius: 40px;
+  margin-top: 200px;
+  margin: 0 auto;
+}
+.hamLineInner {
+  padding: 0 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+.hamGreenLine {
+
+  width: 30px;
+  background: radial-gradient(#fff 60%, rgba(255, 255, 255, 0 )40%)
+}
+.hamNavLineLink {
+  position: absolute;
+  left: 90%;
+}
+.hamNavFooter a{
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+.hamNavIcon {
+  padding-top: 20px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* 以上ハンバーガーメニュー
+ */
 header{
   background-color: rgb(255, 255, 255);
 position: fixed;
@@ -50,7 +128,44 @@ align-items: center;
 #headerLogo{
 min-width: auto;
 }
+.hamburger {
+  width: 34px;
+  height: 30%;
+  margin-right: 30px;
+  justify-content: space-between;
+  flex-direction: column;
+  cursor: pointer;
+  display: none;
+  /* z-index: 10; */
+  /* background-color: #e34e70; */
+}
+.hamHead {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transform-origin: top left;
+  transition: all 0.5s;
+  
+}
+.jsHamHead {
+  transform: rotate(45deg) translate(-1.5px, -3px);
+}
+.hamFoot {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transform-origin: top left;
+  transition: all 0.5s;
+}
 
+.jsHamFoot {
+  transform: rotate(-45deg);
+
+}
 
 
 main {
@@ -469,4 +584,67 @@ padding-top: 50px;
 .cfooter {
   padding-top: 50px;
 padding-bottom: 50px;
+}
+
+@media screen and (max-width:768px) {
+
+  main {
+    margin-top: 0px;
+    padding-top: 70px;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .globalnav {
+    display: none;
+  }
+  .senpaiphoto { 
+    width: 100%;
+    height: auto;
+  }
+
+  .senpaiphoto img {
+    border-radius: 0;
+  
+  }
+  .box {
+    /* top: 740px;
+    width: 75%;
+    left:50%;
+    transform: translateX(-50%); */
+    position: static;
+    margin-top: -24px;
+    width:95%;
+    margin: 0 auto;
+    padding: 20px 0;
+
+  }
+  .about__content {
+    flex-direction: column;
+    
+  }
+  .about__thumbnail { 
+    width: 100%;
+    max-width: none;
+    max-height: none;
+  }
+  .about__text {
+    width: 100%;
+  }
+  .officialLine {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+
+  /* 以下クイズページ */
+  .quiz_container {
+    width: 100%;
+  }
+  .quiz_question > img {
+    margin: 0;
+  }
+  .officialLine {
+    margin-top: 50px;
+  }
 }

@@ -1,5 +1,14 @@
 "use strict";
-
+// 以下ハンバーガーメニューのアニメーション
+const getHam = document.getElementById('jsHamburger');
+const getHamHead = document.getElementById('jsHamburgerHead');
+const getHamFoot = document.getElementById('jsHamburgerFoot');
+const getHamNav = document.getElementById('hamNav');
+getHam.addEventListener('click',()=> {
+  getHamHead.classList.toggle('jsHamHead');
+  getHamFoot.classList.toggle('jsHamFoot');
+  getHamNav.classList.toggle('hamNavToggle');
+})
 const quizArray = [
   {
     question_text:

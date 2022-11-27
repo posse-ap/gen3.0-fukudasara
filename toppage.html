@@ -8,11 +8,38 @@
   <title>POSSE 初めてのweb制作</title>
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style2.css">
+
 
 </head>
 
 
 <body>
+  <nav class="hamNav" id = "hamNav">
+    <div class="hamNavContent">
+      <ul class="hamNavContentList">
+        <li>POSSEとは</li>
+        <li>クイズ</li>
+      </ul>
+      <div class="hamLine">
+        <a href="https://posse-ap.com/" class="hamLineInner">
+          <div class="hamGreenLine">
+            <img src="./assets-ph1-website-main/img/icon/icon-line.svg" alt="LINEの緑のアイコン">
+          </div>
+          <p>POSSE公式LINEを追加</p>
+          <img class = "hamNavLineLink" src="./assets-ph1-website-main/img/icon/icon-link-light.svg">
+      </div>
+      <div class="hamNavFooter">
+        <a>POSSE公式サイト</a>
+        <div class="hamNavIcon">
+          <img src="./assets-ph1-website-main/img/icon/icon-twitter.svg" alt="twitterのアイコン">
+          <img src="./assets-ph1-website-main/img/icon/icon-instagram.svg" alt="instagramのアイコン">
+        </div>
+      </div>
+      </div>
+    
+    </div>
+  </nav>
   <header>
     <div class="headerInner">
       <img src="./assets-ph1-website-main/img/icon/posseLogo.svg" alt="POSSEのヘッダー">
@@ -28,6 +55,10 @@
           </a>
         </div>
       </nav>
+      <div class="hamburger" id="jsHamburger">
+        <span class="hamHead" id="jsHamburgerHead"></span>
+        <span class="hamFoot" id = "jsHamburgerFoot"></span>
+      </div>
     </div>
 
   </header>
@@ -41,6 +72,24 @@
         学生プログラミングコミュニティPOSSE(ポッセ)
         </p>
       <h2>自分史上最高<br>を仲間と。</h2>
+    </div>
+
+    <!-- start about -->
+    <section class="about">
+      <div class="about__heading">
+        <h2 class="about__title">POSSEとは</h2>
+        <h3 class="about__subtitle">About POSSE</h3>
+      </div>
+      <div class="about__content">
+        <div class="about__thumbnail">
+          <img src="./assets-ph1-website-main/img/img-about.jpg" alt="about-img" />
+        </div>
+        <p class="about__text">
+          学生プログラミングコミュニティ「POSSE(ポッセ)」は、人格とプログラミング、二つの面での成長をスローガンに活動しており、大学生だけが集まって学びを深めるコミュニティです。<br />プログラミングだけではありません。オフラインでのイベントや、旅行など様々な企画を行っています！<br />それらを通じて、夏休みの大半をPOSSEで出来た仲間と過ごす人もたくさんいるほどメンバーとの仲が深まります。
+        </p>
+      </div>
+    </section>
+
     </div>
     <div class="officialLine">
       <div class="officialLine_layer"  >
