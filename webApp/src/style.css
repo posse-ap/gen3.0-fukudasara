@@ -1,0 +1,779 @@
+html {
+
+}
+
+header {
+  padding: 10px;
+}
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+.headerInnerLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.headerInnerLeft img {
+  width: 50%;
+}
+.forthWeek {
+  width: 150px;
+  color: darkgray;
+
+  white-space: nowrap;
+
+}
+
+/* 以下追加 */
+.pc-recordAndPost {
+  color: #ffffff;
+  width: 150px;
+  height: 45px;
+  background: linear-gradient(to right, #1276bf, #39cafb);
+  border-radius: 50px;
+  box-shadow: 0px 5px 5px 5px #e0f7ff;
+  white-space: nowrap;
+  
+}
+.recordAndPost {
+  color: #ffffff;
+  width: 150px;
+  height: 45px;
+  background: linear-gradient(to right, #1276bf, #39cafb);
+  border-radius: 50px;
+  box-shadow: 0px 5px 5px 5px #e0f7ff;
+  white-space: nowrap;
+  
+}
+
+.recordAndPost:hover {
+  background: lightcoral;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-headLine {
+  padding-top: 10px;
+  color: #212121;
+  font-weight: bold;
+  font-size: 10px;
+}
+.modalBlock {
+  display: block;
+}
+.modal-content {
+  background-color:#ffffff;
+  border-radius: 30px;
+  margin: 20% auto;
+  width: 80%;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+@keyframes modalopen {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+
+/* .modal-header {
+  background: lightblue;
+  padding: 3px 15px;
+  display: flex;
+  justify-content: space-between;
+} */ 
+
+.modal-header {
+  padding-top: 5px;
+  padding-right: 5px;
+
+display: flex;
+justify-content: flex-end;
+border-radius: 30px;
+/* position: relative; */
+}
+
+.modalClose {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  
+  display: block;
+  right: 0;
+
+  font-size: 2rem;
+  /* width: 20px; */
+  top: 20%;
+  background-color: rgb(220, 220, 220);
+  border-radius: 50%;
+}
+.modalClose::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: black;
+  transform: translate(-50%) rotate(45deg);
+}
+.modalClose::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: black;
+  transform: translate(-50%) rotate(-45deg);
+
+}
+
+.modalClose span {
+  display: block;
+  
+  /* left: 30px; */
+}
+.modalClose:hover {
+  cursor: pointer;
+}
+
+.modal-body {
+  width: 100%;
+  padding: 10px 56px;
+  color: black;
+  display: flex;
+  gap: 40px;
+}
+
+/* 以下記録・投稿完了しましたのやつ */
+.postComplete {
+  position: relative;
+  width: 100%;
+  display: none;
+  height: 50vh;
+  text-align: center;
+  
+  
+}
+.postCompleteContent {
+  position: absolute;
+  width: 100%;
+  top: 20%;
+}
+.completeAwesome {
+  color:#bde360  ;
+}
+.completeCheckS {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color:#bde360 ;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.completeCheckS::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 15px;
+  height: 2px;
+  background-color: #fff;
+  z-index: 10;
+  transform: rotate(40deg);
+  top: 55%;
+  left: 18%;
+
+}
+.completeCheckS::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  z-index: 10;
+  transform: rotate(-40deg);
+  top: 50%;
+  left: 38%;
+}
+
+/* 以上記録・投稿完了しましたのやつ */
+/* 以下モーダル左 */
+.modal-left {
+  width: 100%;
+
+}
+.modal-gakushuDate {
+width: 100%;
+
+}
+.modal-input {
+  /* border: solid 1px #000000; */
+  width: 100%;
+  height: 30px;
+  border-radius: 8px;
+  background-color: #f5f5f8;
+}
+.modal-gakushuContent {
+  width: 100%;
+
+
+  
+}
+
+/* 以下チェックボックス */
+.my-checkbox {
+  display: inline-block;
+  font-size: 12px;
+  width: fit-content;
+  border-radius: 30px;
+  padding: 4px;
+  
+  /* display: block; */
+  position: relative;
+  margin: 2px 0;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none; /* テキストの選択を防ぐ */
+  background-color:#f5f5f8 ;
+}
+
+/* inputは非表示にする */
+.my-checkbox input {
+  display: none;
+}
+
+/* □ */
+.checkmark {
+  position: absolute;
+  top: 4px; /* 上からの位置 */
+  left: 5px;
+  height: 18px; /* 大きさ */
+  width: 18px; /* 大きさ */
+  /* border: solid 2px #d4dae2; 線 */
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #cccccc;
+
+}
+/* ✓ */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  left: 6px; /* チェックの位置 */
+  top: 3px; /* チェックの位置 */
+  width: 6px; /* チェックの大きさ */
+  height: 10px; /* チェックの大きさ */
+  border: solid #FFF;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  /* opacity: 0; 透明にしておく */
+}
+
+/* チェックが入ったときの□ */
+.my-checkbox input:checked + .checkmark {
+  background: #2e80ff; /* チェック時の色 */
+  border-color: #2e80ff; /* チェック時の色 */
+}
+
+/* チェックが入ったときの✓ */
+.my-checkbox input:checked + .checkmark:after {
+  opacity: 1; /* 透明を解除 */
+}
+
+/* ここまでチェックボックス */
+
+/* 以下Twitterチェックボックス */
+.my-checkboxT {
+  display: inline-block;
+  font-size: 12px;
+  width: fit-content;
+  border-radius: 30px;
+  padding: 4px;
+  
+  /* display: block; */
+  position: relative;
+  margin: 2px 0;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none; /* テキストの選択を防ぐ */
+  /* background-color:#f5f5f8 ; */
+}
+
+/* inputは非表示にする */
+.my-checkboxT input {
+  display: none;
+}
+
+/* □ */
+.checkmark {
+  position: absolute;
+  top: 4px; /* 上からの位置 */
+  left: 5px;
+  height: 18px; /* 大きさ */
+  width: 18px; /* 大きさ */
+  /* border: solid 2px #d4dae2; 線 */
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: #cccccc;
+
+}
+/* ✓ */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  left: 6px; /* チェックの位置 */
+  top: 3px; /* チェックの位置 */
+  width: 6px; /* チェックの大きさ */
+  height: 10px; /* チェックの大きさ */
+  border: solid #FFF;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  /* opacity: 0; 透明にしておく */
+}
+
+/* チェックが入ったときの□ */
+.my-checkboxT input:checked + .checkmark {
+  background: #2e80ff; /* チェック時の色 */
+  border-color: #2e80ff; /* チェック時の色 */
+}
+
+/* チェックが入ったときの✓ */
+.my-checkboxT input:checked + .checkmark:after {
+  opacity: 1; /* 透明を解除 */
+}
+
+/* ここまでTwitterチェックボックス */
+
+.modal-gakushuLang{
+  width: 100%;
+
+}
+/* ここまでモーダル左 */
+
+/* 以下モーダル右 */
+.modal-right {
+  width: 100%;
+
+}
+
+.modal-gakushuTime {
+  width: 100%;
+
+}
+.modal-twitter {
+  width: 100%;
+
+}
+#modal-twitterInput {
+height: 150px;
+}
+.modal-twitterShare {
+  display: flex;
+  font-size: 10px;
+  padding-top: 10px;
+  width: 100%;
+  position: relative;
+}
+#twitterCheck {
+  position: absolute;
+}
+
+.modal-twitterShare p {
+  /* padding-left: 25px; */
+}
+/* ここまでモーダル右 */
+
+.modal-footer {
+  padding-top: 10px;
+  width: 100%;
+  height: 60px;
+  /* position: relative; */
+  border-radius:30px ;
+}
+#modal-record {
+  display: block;
+  margin: 0 auto;
+  font-size: 12px;
+  width: 45%;
+  height: 60%;
+}
+/* ここまでモーダル */
+
+
+
+
+
+
+
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color:#f5f5f8;
+  /* margin: 0 80px; */
+}
+
+.bigBox {
+  padding-top: 20px;
+  width: calc(100% - 140px);
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+}
+.left {
+  width: calc((100% - 20px) /2);
+  /* background-color: lawngreen; */
+  
+}
+.right {
+  width: calc((100% - 20px) /2);
+  display: flex;
+  gap: 20px;
+}
+.cards {
+
+  display: flex;
+  gap: 10px;
+  /* background-color: chocolate; */
+  width: 100%;
+  margin:  auto;
+  
+}
+
+.cards div {
+  padding: 10px ;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 5px #dadadb;
+}
+
+.dataName {
+  color: #046bba;
+  font-weight: 600;
+}
+.dataNumber {
+  font-weight: 900;
+  font-size: 26px;
+}
+.dataUnit {
+  color:#9ebed4 ;
+}
+
+.myFirstChart {
+
+  width: 100%;
+
+  margin-top: 50px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+
+}
+
+.mySecondChart {
+  width: 90%;
+  margin: 0 auto;
+}
+.language {
+  width: 100%;
+  background-color:#fff;
+  border-radius: 20px;
+  padding: 20px;
+}
+.languageInner {
+  
+}
+.donutLegend {
+  padding-top: 20px;
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.donutLegendSample {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  /* padding-right: 10px;
+  padding-bottom: 10px; */
+}
+.donutLegendIcon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+}
+.content {
+  width: 100%;
+  background-color: darkgreen;
+  border-radius: 20px;
+}
+
+/* 以下カレンダー */
+#calenderBox {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  /* left: 50%; */
+  top: 10%;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: #fff;
+}
+#calender {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 10%;
+  width:500px;
+  border-collapse: collapse;
+  border: 2px solid #eee;
+}
+table {
+
+
+}
+
+thead,
+tfoot {
+  background: #eee;
+}
+
+.selectButton {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 65%;
+  z-index: 10;
+  color: #ffffff;
+  width: 150px;
+  height: 40px;
+  background: linear-gradient(to right, #1276bf, #39cafb);
+  border-radius: 50px;
+  box-shadow: 0px 5px 5px 5px #e0f7ff;
+  white-space: nowrap;
+}
+th,
+td {
+  padding: 8px;
+  text-align: center;
+}
+
+tbody td:first-child {
+  color: red;
+}
+
+tbody td:last-child {
+  color: blue;
+}
+
+tfoot {
+  font-weight: bold;
+}
+
+td.disabled {
+  opacity: 0.3;
+}
+
+td.today {
+  font-weight: bold;
+}
+
+#prev,
+#next,
+#today {
+  cursor: pointer;
+  user-select: none;
+  color: #046bba;
+}
+/* .calenderBlock {
+  display: block;
+} */
+
+footer {
+position: relative;
+}
+.footerDate {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+font-weight: 600;
+}
+.footerDateInner {
+  display: flex;
+  gap: 25px;
+}
+.footerDate span {
+  color: #046bba;
+}
+
+/* 以下ローディング画面 */
+/* ローディング画面背景 */
+.loader-bg {
+  width: 70vw;
+  height: 60vh;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 9999;
+  background-color:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+/* ローディングアニメーション */
+.loader {
+  display: none;
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: #ffffff;
+  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #ffffff 10%, rgba(220, 159, 159, 0) 42%);
+  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #137bc3 10%, rgba(255, 255, 255, 0) 42%);
+
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  /* background: #ffffff; */
+  background: #137bc3;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+
+  background: #fff;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
+  0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  }
+  100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  }
+  100% {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  }
+}
+/* ここまでローディング画面 */
+
+.sp-recordAndPost {
+  display: none;
+}
+
+/* ここからレスポンシブ */
+@media(max-width:767px) {
+  
+  .bigBox {
+    flex-direction: column;
+  width: calc(100% - 50px);
+
+  }
+  .left {
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+  }
+  .myFirstChart {
+  margin-top: 20px;
+
+  }
+  #pcButton {
+    display: none;
+  }
+  .sp-recordAndPost {
+    color: #ffffff;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    height: 45px;
+    margin-top: 20px;
+    background: linear-gradient(to right, #1276bf, #39cafb);
+    border-radius: 50px;
+    box-shadow: 0px 5px 5px 5px #e0f7ff;
+    white-space: nowrap;
+  }
+  .modal-content {
+    margin: 0;
+    margin-top: 40px;
+    width: 100%;
+    height: calc(100vh - 40px);
+    border-radius: 20px 20px 0 0 ;
+  }
+  .modal-body {
+    flex-direction: column;
+  }
+  #modal-record {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    
+  }
+  #spButton {
+    display: block;
+  }
+}

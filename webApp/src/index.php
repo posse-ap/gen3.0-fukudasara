@@ -1,0 +1,297 @@
+<?php
+require_once "./dbconnect.php";
+
+$stmt = $db ->prepare("SELECT SUM(study_hour) from study_data where study_date = CURDATE()");
+$stmt->execute();
+$studyHourTodays = $stmt->fetch();
+foreach($studyHourTodays as $studyHourToday){
+
+}
+
+$stmt = $db ->prepare('select SUM(study_hour) from study_data where DATE_FORMAT(study_date, "%Y%m") = DATE_FORMAT(NOW(), "%Y%m")');
+$stmt->execute();
+$studyHourMonths = $stmt->fetch();
+foreach($studyHourMonths as $studyHourMonth){
+
+}
+
+$stmt = $db ->prepare('select SUM(study_hour) from study_data');
+$stmt->execute();
+$studyHourYears = $stmt->fetch();
+foreach($studyHourYears as $studyHourYear){
+
+}
+?>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+  
+  <script src="common.js" defer></script>
+  <!-- deferは他の全てを読み込んだ後に実行しますよってやつらしい -->
+
+
+</head>
+
+<body>
+  <header>
+    <div class="headerInner">
+      <div class="headerInnerLeft">
+        <img src="./img/logo.svg" alt="POSSEのロゴ">
+        <p class="forthWeek">4th week</p>
+      </div>
+      <button id="modalOpen"  id ="pcButton" class="pc-recordAndPost" onclick="modalOpen()">記録・投稿</button>
+
+  </header>
+  <main>
+
+    <!-- 以下モーダル -->
+    <div id="easyModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h1>Great job 🎉</h1> -->
+          <span class="modalClose"></span>
+        </div>
+        <div class="postComplete">
+          <div class="postCompleteContent">
+            <p class="completeAwesome">AWESOME!</p>
+            <div class="completeCheck">
+              <span class="completeCheckS"></span>
+            </div>
+            <p class="postCompleteP">記録・投稿完了しました</p>
+          </div>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <div class="modal-left">
+            <div class="modal-gakushuDate">
+              <label for="modal-gakushuDateInput" class="modal-headLine">学習日</label>
+              <!-- <input type="text" class="modal-input" size="10" id="modal-gakushuDateInput" onclick="calenderOpen()"> -->
+              <input type="date" class="modal-input" size="10" id="modal-gakushuDateInput" >
+              <!-- 以下カレンダー -->
+              <!-- ここまでカレンダー -->
+
+            </div>
+            <div class="modal-gakushuContent">
+              <p class="modal-headLine">学習コンテンツ</p>
+
+              <label class="my-checkbox">
+                <input type="checkbox" name="studyContent" value="nYobi">
+                <span class="checkmark"></span>
+                N予備校
+              </label>
+
+              <label class="my-checkbox">
+                <input type="checkbox" name="studyContent" value="dotInstall">
+                <span class="checkmark"></span>
+                ドットインストール
+              </label>
+
+              <label class="my-checkbox">
+                <input type="checkbox" name="studyContent" value="posseKadai">
+                <span class="checkmark"></span>
+                POSSE課題
+              </label>
+
+            </div>
+            <div class="modal-gakushuLang">
+              <p class="modal-headLine">学習言語（複数選択可）</p>
+
+              <label class="my-checkbox">
+                <input type="checkbox" name="studyLang" value="html">
+                <span class="checkmark"></span>
+                HTML
+              </label>
+
+              <label class="my-checkbox">
+                <input type="checkbox" name="studyLang" value="css">
+                <span class="checkmark"></span>
+                CSS
+              </label>
+
+              <label class="my-checkbox">
+                <input type="checkbox" name="studyLang" value="JavaScript">
+                <span class="checkmark"></span>
+                JavaScript
+              </label>
+
+              <label class="my-checkbox">
+                <input type="checkbox" name="studyLang" value="php">
+                <span class="checkmark"></span>
+                PHP
+              </label>
+
+              <label class="my-checkbox">
+                <input type="checkbox" name="studyLang" value="laravel">
+                <span class="checkmark"></span>
+                Laravel
+              </label>
+
+              <label class="my-checkbox">
+                <input type="checkbox" name="studyLang" value="sql">
+                <span class="checkmark"></span>
+                SQL
+              </label>
+
+              <label class="my-checkbox">
+                <input type="checkbox" name="studyLang" value="shell">
+                <span class="checkmark"></span>
+                SHELL
+              </label>
+
+              <label class="my-checkbox">
+                <input type="checkbox" name="studyLang" value="other">
+                <span class="checkmark"></span>
+                情報システム基礎知識（その他）
+              </label>
+
+            </div>
+          </div>
+          <div class="modal-right">
+            <div class="modal-gakushuTime">
+              <label for="modal-gakushuTimeInput" class="modal-headLine">学習時間</label>
+              <input type="text" id="modal-gkushuTimeInput" class="modal-input">
+            </div>
+            <div class="modal-twitter">
+              <label class="modal-headLine">Twitter用コメント</label>
+              <textarea maxlength="140"  id="modal-twitterInput" class="modal-input"></textarea>
+            </div>
+            <div class="modal-twitterShare">
+              <label class="my-checkboxT" >
+                <input type="checkbox" id="js-my-checkboxT">
+              <span class="checkmark" id="twitterCheck"></span>
+              <p>
+                Twitterにシェアする
+              </p>
+            </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" id="modal-footer">
+          <button id="modal-record" class="recordAndPost" >記録・投稿</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div id="calenderBox">
+      <table id="calender">
+        <thead>
+          <tr>
+            <th id="prev">&laquo;</th>
+            <th id="title" colspan="5">2020/05</th>
+            <th id="next">&raquo;</th>
+          </tr>
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td id="today" colspan="7">Today</td>
+            <button id='selectButton' class="selectButton">決定</button>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- ローディング画面 -->
+    <div class="loader-bg" id="loader-bg">
+      <div class="loader" id ="loader"></div>
+    </div>
+  
+
+
+    <div class="bigBox">
+      <section class="left">
+        <div class="cards">
+          <div class="today">
+            <p class="dataName">Today</p>
+            <p class="dataNumber"> <?php echo htmlspecialchars($studyHourToday); ?></p>
+            <p class="dataUnit">hour</p>
+          </div>
+          <div class="month">
+            <p class="dataName">Month</p>
+            <p class="dataNumber"> <?php echo htmlspecialchars($studyHourMonth); ?></p>
+            <p class="dataUnit">hour</p>
+          </div>
+          <div class="total">
+            <p class="dataName">Total</p>
+            <p class="dataNumber"> <?php echo htmlspecialchars($studyHourYear); ?></p>
+            <p class="dataUnit">hour</p>
+          </div>
+        </div>
+
+        <div class="myFirstChart">
+          <canvas id="myChart">
+          </canvas>
+        </div>
+
+      </section>
+
+      <section class="right">
+        <div class="language">
+          <div class="languageInner">
+            <p class="langTitle">
+              学習言語</p>
+            <div class="mySecondChart">
+              <canvas id="myDonutLangChart"></canvas>
+            </div>
+            <ul class="donutLegend" id="js-donutLangLegend">
+            </ul>
+          </div>
+        </div>
+        <div class="language">
+          <div class="languageInner">
+            <p class="langTitle">
+            学習コンテンツ
+            </p>
+            <div class="mySecondChart">
+              <canvas id="myDonutContentChart"></canvas>
+            </div>
+            <ul class="donutLegend" id="js-donutContentLegend">
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="footerDate">
+        <div class="footerDateInner">
+          <span>＜</span>
+          <p>
+            2022年 10月
+          </p>
+          <span>＞</span>
+        </div>
+      </div>
+      <button id="modalOpen" id ="spButton" class="sp-recordAndPost" onclick="modalOpen()">記録・投稿</button>
+    </footer>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="common.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <!-- 以下％表示 -->
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  
+<?php
+require('./chart.php');
+?>
+</body>
+
+</html>
